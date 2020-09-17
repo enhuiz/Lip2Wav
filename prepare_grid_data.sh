@@ -2,13 +2,13 @@
 
 spk=$1
 
-in_root=data/grid-raw
-out_root=data/grid
-
 if [ -z $spk ]; then
     echo please input a speaker $spk
+    exit
 fi
 
+in_root=data/grid-raw
+out_root=data/grid
 
 in_dir=$in_root/detect/$spk
 echo Processing $in_dir
@@ -24,6 +24,7 @@ for vid in $vids; do
         wav=${vid/detect/audiotrack}
         wav=${wav/.mp4/.wav}
         cp $wav $cut_out_dir
+        mv $cut_out_dir/*.wav $cut_out_dir/audio.wav
     fi
 done
 

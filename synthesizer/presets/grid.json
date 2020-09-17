@@ -1,5 +1,5 @@
 {
-    "speaker" : "grid-s1",
+    "speaker" : "grid",
 
     "enc_conv_num_layers" : 3,
     "enc_conv_kernel_size" : [5,3,3],
